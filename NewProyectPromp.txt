@@ -15,4 +15,109 @@ Negative scenarios and edge cases.
 CI/CD configuration.
 Any integration with external reports.
 
-The project must be created inside the folder ProyectoClinePromp open in this code editor..
+The project must be created inside the folder ProyectoClinePromp open in this code editor.
+
+answer cline:
+
+# Plan: Playwright Web Automation Project for Sauce Demo
+
+I'll create a complete Playwright test automation project for https://sauce-demo.myshopify.com/ using TypeScript and Page Object Model (POM) pattern.
+
+## Project Structure
+
+```
+ProyectoClinePromp/
+├── package.json              # Project dependencies and scripts
+├── playwright.config.ts      # Playwright configuration
+├── tsconfig.json             # TypeScript configuration
+├── .env                      # Environment variables (test credentials)
+├── .gitignore                # Git ignore file
+├── tests/                    # Test files
+│   ├── login.spec.ts         # Login tests
+│   ├── checkout.spec.ts      # Checkout tests
+│   └── cart.spec.ts          # Cart tests
+├── pages/                    # Page Objects
+│   ├── base.page.ts          # Base page with common methods
+│   ├── login.page.ts         # Login page object
+│   ├── products.page.ts      # Products/Cart page object
+│   └── checkout.page.ts      # Checkout page object
+└── test-data/                # Test data
+    └── test-data.ts          # Test data and fixtures
+```
+
+## Key Components
+
+### 1. Page Objects (POM)
+- **BasePage**: Common methods like `navigate()`, `waitForPageLoad()`, `click()`, `fill()`
+- **LoginPage**: Selectors and methods for login page (`#user-name`, `#password`, `#login-button`)
+- **ProductsPage**: Selectors and methods for products listing and cart management
+- **CheckoutPage**: Selectors and methods for checkout flow (shipping info, payment)
+
+### 2. Test Files (Happy Paths)
+- **Login**: Valid login flow with standard_user
+- **Cart**: Add items to cart, view cart, remove items
+- **Checkout**: Complete checkout flow from cart to order confirmation
+
+### 3. Playwright Configuration (playwright.config.ts)
+- Base URL: `https://sauce-demo.myshopify.com/`
+- All browsers: chromium, firefox, webkit
+- Headed/headless modes via CLI
+- HTML reporter enabled
+- Screenshots on failure
+- Video recording option
+
+### 4. Package.json Scripts
+```json
+{
+  "scripts": {
+    "test:headed": "playwright test --project=chromium --headed",
+    "test:headless": "playwright test",
+    "test:all-browsers": "playwright test",
+    "test:debug": "playwright test --debug",
+    "report": "playwright show-report"
+  }
+}
+```
+
+### 5. Test Data
+- Standard credentials from Sauce Demo:
+  - Username: `standard_user`
+  - Password: `secret_sauce`
+
+## Functional Flows to Implement
+
+### Login Flow
+1. Navigate to the site
+2. Enter valid credentials
+3. Click Login
+4. Verify successful login (redirected to products page)
+
+### Cart Flow
+1. Login successfully
+2. Add products to cart
+3. Verify cart badge updates
+4. Navigate to cart
+5. Verify items in cart
+
+### Checkout Flow
+1. Login successfully
+2. Add items to cart
+3. Go to checkout
+4. Enter shipping information
+5. Continue to overview
+6. Complete checkout
+7. Verify order confirmation
+
+## Implementation Steps
+
+1. Initialize npm project and install Playwright
+2. Create TypeScript configuration
+3. Create Playwright configuration
+4. Create base page class
+5. Create specific page objects (Login, Products, Checkout)
+6. Create test data file
+7. Create test files for each functionality
+8. Add npm scripts for different execution modes
+9. Create .gitignore and .env files
+
+
