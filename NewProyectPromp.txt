@@ -1,0 +1,18 @@
+Act as an expert test architect in web test automation with Playwright.
+I need to create a web automation project for the page https://sauce-demo.myshopify.com/ using the Playwright automation framework.
+The project should focus for now on basic flows and happy paths.
+Consider the following requirements for the creation of this project:
+
+Use Page Object Model (POM) to organize the code efficiently.
+The project must run on all browsers supported by Playwright.
+The functionalities to focus on are: Login, Checkout, and My Cart.
+Add scripts in package.json to run in headed mode, headless mode, and open the HTML report.
+The language to be used is TypeScript.
+
+Consider out of scope:
+
+Negative scenarios and edge cases.
+CI/CD configuration.
+Any integration with external reports.
+
+The project must be created inside the folder ProyectoClinePromp open in this code editor..
