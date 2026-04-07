@@ -1,0 +1,41 @@
+{
+  "name": "proyectoclinepromp",
+  "version": "1.0.0",
+  "description": "Playwright Web Automation Project for Sauce Demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:headless": "playwright test",
+    "test:chromium": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report",
+    "report:open": "npx playwright show-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karlaJS27/ProyectoClinePromp.git"
+  },
+  "keywords": [
+    "playwright",
+    "automation",
+    "testing",
+    "typescript",
+    "sauce-demo"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karlaJS27/ProyectoClinePromp/issues"
+  },
+  "homepage": "https://github.com/karlaJS27/ProyectoClinePromp#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.21",
+    "dotenv": "^16.5.0",
+    "typescript": "^5.8.3"
+  }
+}
